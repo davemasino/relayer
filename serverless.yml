@@ -1,0 +1,21 @@
+# For full config options, check the docs:
+#    docs.serverless.com
+
+service: relayer
+
+# You can pin your service to only deploy with a specific Serverless version
+# Check out our docs for more details
+# frameworkVersion: "=X.X.X"
+
+provider:
+  name: aws
+  runtime: python3.7
+
+  stage: dev
+  region: us-west-2
+  profile: ${env:AWS_PROFILE}
+
+functions:
+  run:
+    handler: handler.run
+    memorySize: 128
