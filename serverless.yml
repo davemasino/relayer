@@ -19,3 +19,16 @@ functions:
   run:
     handler: handler.run
     memorySize: 128
+
+  cron:
+    handler: handler.run
+    memorySize: 128
+    events:
+      # Invoke Lambda function every minute
+      - schedule: rate(1 minute)
+  secondCron:
+    handler: handler.run
+    memorySize: 128
+    events:
+      # Every 10 min on weekdays
+      - schedule: cron(0/10 * ? * MON-FRI *)
