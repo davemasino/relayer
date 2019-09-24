@@ -20,6 +20,12 @@ fish:
 set -x AWS_PROFILE <your profile name>
 ```
 
+## Test
+
+```bash
+pytest
+```
+
 ## Deploy
 
 ```bash

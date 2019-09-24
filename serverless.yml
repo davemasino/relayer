@@ -3,10 +3,6 @@
 
 service: relayer
 
-# You can pin your service to only deploy with a specific Serverless version
-# Check out our docs for more details
-# frameworkVersion: "=X.X.X"
-
 provider:
   name: aws
   runtime: python3.7
@@ -15,20 +11,19 @@ provider:
   region: us-west-2
   profile: ${env:AWS_PROFILE}
 
-functions:
-  run:
-    handler: handler.run
-    memorySize: 128
+package:
+  exclude:
+    - __pycache__/**
+    - .vscode/**
+    - .pytest_cache/**
+    - tests/**
+  include:
+    - src/relayer/**
 
+functions:
   cron:
-    handler: handler.run
+    handler: src/relayer/core.handler
     memorySize: 128
     events:
       # Invoke Lambda function every minute
       - schedule: rate(1 minute)
-  secondCron:
-    handler: handler.run
-    memorySize: 128
-    events:
-      # Every 10 min on weekdays
-      - schedule: cron(0/10 * ? * MON-FRI *)
