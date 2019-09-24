@@ -14,9 +14,13 @@ provider:
 package:
   exclude:
     - __pycache__/**
-    - .vscode/**
+    - .circleci/**
     - .pytest_cache/**
-    - tests/**
+    - .vscode/**
+    - build/**
+    - dist/**
+    - relayer_pkg_davemasino.egg-info/**
+    - test/**
   include:
     - src/relayer/**
 

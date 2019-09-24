@@ -1,4 +1,3 @@
-__all__ = ["handler"]
+__all__ = ["handler", "foo"]
 
-
-from .core import handler
+from .core import handler, foo
