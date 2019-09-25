@@ -1,4 +1,4 @@
-from relayer.core import foo, handler
+from relayer.core import handler
 
 def test_handler():
     cx = type('',(object,),{"function_name": "relayer-unit-test"})()
@@ -6,6 +6,3 @@ def test_handler():
     msg = ret['message']
     assert msg == "Go Serverless v1.0! Your function executed successfully!"
 
-def test_foo():
-    a = foo()
-    assert a == "bar"

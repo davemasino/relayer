@@ -14,7 +14,3 @@ def handler(event, context):
         "message": "Go Serverless v1.0! Your function executed successfully!",
         "event": event
     }
-
-
-def foo():
-    return "bar"
