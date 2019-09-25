@@ -23,7 +23,8 @@ set -x AWS_PROFILE <your profile name>
 ## Test
 
 ```bash
-pytest
+pip install -r requirements-dev.txt
+tox
 ```
 
 ## Deploy
