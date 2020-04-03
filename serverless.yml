@@ -15,12 +15,15 @@ package:
   exclude:
     - __pycache__/**
     - .circleci/**
+    - .tox/**
     - .pytest_cache/**
     - .vscode/**
     - build/**
     - dist/**
     - relayer_pkg_davemasino.egg-info/**
     - test/**
+    - .coverage
+    - .python-version
   include:
     - src/relayer/**
 

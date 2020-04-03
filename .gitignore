@@ -1,0 +1,5 @@
+.coverage
+.python-version
+.tox
+.vscode/
+src/*egg-info
